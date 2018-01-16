@@ -19,6 +19,26 @@
         echo '<h1>This is page1, subapage-a</h1>';
     });
 
+    $f3->route('GET /hello/@name', function ($f3, $params){
+        $name = $params['name'];
+        echo "<h1>Hello, $name</h1>";
+    });
+
+    $f3->route('GET /language/@lang', function ($f3, $params){
+        switch ($params['lang']){
+            case 'swahili':
+                echo 'Jumbo!'; break;
+            case 'spanish':
+                echo 'Hola!'; break;
+            case 'russian':
+                echo 'Privet!'; break;
+            case 'farsi':
+                echo 'Salam!'; break;
+            default:
+                echo 'Hello!'; break;
+        }
+    });
+
     $f3->route('GET /jewelry/rings/toe-rings', function (){
         $template = new Template();
         echo $template->render('views/toe-rings.html');
