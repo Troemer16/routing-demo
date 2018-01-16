@@ -19,5 +19,10 @@
         echo '<h1>This is page1, subapage-a</h1>';
     });
 
+    $f3->route('GET /jewelry/rings/toe-rings', function (){
+        $template = new Template();
+        echo $template->render('views/toe-rings.html');
+    });
+
     $f3->run();
 ?>
