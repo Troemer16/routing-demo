@@ -34,8 +34,11 @@
                 echo 'Privet!'; break;
             case 'farsi':
                 echo 'Salam!'; break;
+            //reroute to another page
+            case 'french':
+                $f3->reroute('/');//home page
             default:
-                echo 'Hello!'; break;
+                $f3->error(404);//throw error
         }
     });
 
